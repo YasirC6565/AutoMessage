@@ -22,3 +22,22 @@ Flow (MVP1):
 7. Return or print the final reply.
 """
 
+from doc_loader import load_docs
+from simple_retriever import retrieve
+
+
+def main():
+    docs = load_docs()
+    query = "What services do you offer"
+    results = retrieve(query, docs, top_k=1)
+
+    print("Retriever Results:")
+    for r in results:
+        print(f"File: {r['filename']}")
+        print(f"Content: {r['content']}")
+        print("----")
+
+
+if __name__ == "__main__":
+    main()
+

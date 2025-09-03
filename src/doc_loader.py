@@ -22,6 +22,7 @@ def load_docs(data_dir: str = "data") -> list[dict]:
     Returns:
         list[dict]: A list of dictionaries with 'filename' and 'content'
     """
+
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     data_dir = os.path.join(project_root, "data")
 
