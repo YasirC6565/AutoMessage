@@ -41,12 +41,12 @@ Flow (MVP1):
 # if __name__ == "__main__":
 #     main()
 
-# from input_cleaner import clean_text
+from input_cleaner import clean_text
 from doc_loader import load_docs
 from simple_retriever import retrieve
 from tool_router import route_tool
 from tools import execute_tool
-
+from logger import log
 
 
 def main():
@@ -54,14 +54,15 @@ def main():
     query = "What services do you offer"
 
     # 2. Clean the query
-    #cleaned_query = clean_text(query)
+    cleaned_query = clean_text(query)
 
     # 3. Load reference documents
     docs = load_docs()
 
     # 4. Retrieve relevant document(s)
-    results = retrieve(query, docs, top_k=1)
+    results = retrieve(cleaned_query, docs, top_k=1)
 
+    log(cleaned_query)
     print("Retriever Results:")
     for r in results:
         print(f"File: {r['filename']}")

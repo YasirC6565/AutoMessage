@@ -32,25 +32,6 @@ def clean_text(raw_message:str) -> str:
     return cleaned
 
 
-#Seeing if it works
-
-from input_cleaner import clean_text
-
-# Test 1: Normal messy text
-msg1 = "   HELLO   World!!   \nThis is\tan Example "
-print("Test 1:", clean_text(msg1))
-
-# Test 2: Input is None
-msg2 = None
-print("Test 2:", clean_text(msg2))
-
-# Test 3: Input is not a string (number)
-msg3 = 12345
-print("Test 3:", clean_text(msg3))
-
-# Test 4: Already clean text
-msg4 = "python is fun"
-print("Test 4:", clean_text(msg4))
 
 
 

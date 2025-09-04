@@ -12,16 +12,11 @@ from datetime import datetime
 
 def log(message: str) -> None:
     # get the current time
-    timestamp = datetime.now()
-
+    now = datetime.now()
+    timestamp = now.strftime("%Y-%m-%d %H:%M")
     # print the time and the message
-    print(f"[{timestamp}] {message}")
+    print(f"[{timestamp}] '{message}'")
 
 
-#testing code
-from logger import log
 
-# Try logging different messages
-log("Program started")
-log("Loading input cleaner")
-log("Process finished successfully")
+
